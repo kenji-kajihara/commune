@@ -12,7 +12,14 @@ class ProfileController extends Controller
 {
     
        public function add(){
-           
+        $user = Auth::user();
+        $user_id=$user->id;
+        $profiles= Profile::all();
+        foreach($profiles as $profile){
+            if($user_id == $profile->user_id){
+                return view('commune.profile.error');
+            }
+        }
         
         return view('commune.profile.create');
     }

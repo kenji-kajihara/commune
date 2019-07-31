@@ -7,5 +7,6 @@
         <div class="row">
             <h2>あなたは登録済みです</h2>
         </div>
+        
     </div>
 @endsection
