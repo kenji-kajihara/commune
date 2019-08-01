@@ -26,7 +26,6 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::get('community/description','CommunityController@description');
     
     Route::get('profile/create','ProfileController@add');
-    Route::get('profile/error','ProfileController@add');
     Route::post('profile/create','ProfileController@create');
     Route::get('profile','ProfileController@index');
     Route::get('profile/edit','ProfileController@edit');

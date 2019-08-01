@@ -12,33 +12,28 @@ class ProfileController extends Controller
 {
     
        public function add(){
+        
         $user = Auth::user();
         $user_id=$user->id;
-        $profiles= Profile::all();
-        foreach($profiles as $profile){
-            if($user_id == $profile->user_id){
+        $profile=Profile::where('user_id',$user_id)->get();
+        if(!$profile->isEmpty()){
                 return view('commune.profile.error');
             }
-        }
         
         return view('commune.profile.create');
     }
+    
+    
     
     public function create(Request $request){
         $this->validate($request, Profile::$rules);
         $form = $request->all();
         $profile = new Profile;
-    
         unset($form['_token']);
-        
         $user = Auth::user();
-        
         $profile->fill($form);
-        
         $profile->user_id = $user->id;
-        
         $profile->save();
-        
         return redirect('commune/profile/create');
     }
     

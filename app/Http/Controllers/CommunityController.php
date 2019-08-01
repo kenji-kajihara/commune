@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;    #追加してください。
 class CommunityController extends Controller
 {
        public function add(){
-        
+
         return view('commune.community.create');
     }
     
