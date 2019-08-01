@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="{{ action('ProfileController@add') }}" >プロフィール登録を行ってください</a>
                 </div>
             </div>
         </div>
