@@ -73,5 +73,20 @@ class ProfileController extends Controller
         return redirect('commune/profile');
         
     }
+    
+    public function myProfile(Request $request){
+        dd($this->valify());
+        if($this->profile->isEmpty()){
+                return view('commune.profile.create');
+            }
+        $myProfile=Profile::find($user_id);
+        return view('commune.profile.myProfile',['myProfile'=>$myProfile]);
+    }
+    
+    public function valify(){
+        $user = Auth::user();
+        $user_id=$user->id;
+        $profile=Profile::where('user_id',$user_id)->get();
+    }
 }
  

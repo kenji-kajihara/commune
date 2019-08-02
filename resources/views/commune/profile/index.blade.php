@@ -8,8 +8,11 @@
             <h2>プロフィール一覧</h2>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <a href="{{ action('ProfileController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ action('ProfileController@myProfile') }}" role="button" class="btn btn-primary">MYプロフィール</a>
             </div>
             <div class="col-md-8">
                 <form action="{{ action('ProfileController@index') }}" method="get">
