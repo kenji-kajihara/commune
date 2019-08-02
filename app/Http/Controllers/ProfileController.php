@@ -75,18 +75,17 @@ class ProfileController extends Controller
     }
     
     public function myProfile(Request $request){
-        dd($this->valify());
-        if($this->profile->isEmpty()){
+        $user = Auth::user();
+        $user_id = $user->id;
+        $myProfiles = Profile::where('user_id',$user_id)->get();
+        
+        if($myProfiles->isEmpty()){
                 return view('commune.profile.create');
             }
-        $myProfile=Profile::find($user_id);
-        return view('commune.profile.myProfile',['myProfile'=>$myProfile]);
-    }
-    
-    public function valify(){
-        $user = Auth::user();
-        $user_id=$user->id;
-        $profile=Profile::where('user_id',$user_id)->get();
+        
+        $myProfile = $myProfiles[0];
+
+        return view('commune.profile.myProfile',["myProfile"=>$myProfile]);
     }
 }
  

@@ -25,6 +25,7 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::get('community/delete','CommunityController@delete');
     Route::get('community/description','CommunityController@description');
     
+    Route::get('profile/valify','ProfileController@valify');
     Route::get('profile/create','ProfileController@add');
     Route::post('profile/create','ProfileController@create');
     Route::get('profile','ProfileController@index');

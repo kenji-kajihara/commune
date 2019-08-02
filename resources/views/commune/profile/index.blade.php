@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <a href="{{ action('ProfileController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('ProfileController@valify') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
             <div class="col-md-2">
                 <a href="{{ action('ProfileController@myProfile') }}" role="button" class="btn btn-primary">MYプロフィール</a>
