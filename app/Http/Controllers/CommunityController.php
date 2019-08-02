@@ -74,7 +74,6 @@ class CommunityController extends Controller
     public function description(Request $request){
         $community = Community::find($request->id);
         $user_id = $community->user_id;
-        dd($community);
         $user= User::find($user_id);
         
         return view('commune.community.description',["community"=>$community,"user"=>$user]);

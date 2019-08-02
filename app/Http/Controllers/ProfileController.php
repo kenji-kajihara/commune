@@ -49,7 +49,10 @@ class ProfileController extends Controller
     }
     
     public function edit(Request $request){
-        $profile=Profile::find($request->id);
+        $user = Auth::user();
+        $user_id = $user->id;
+        $profiles = Profile::where('user_id',$user_id)->get();
+        $profile = $profiles[0];
         if(empty($profile)){
             abort(404);
         }

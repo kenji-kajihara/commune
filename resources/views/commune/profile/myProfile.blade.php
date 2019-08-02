@@ -6,7 +6,9 @@
         <div class="row">
             <h2>MYプロフィール</h2>
         </div>
-        
+        <div class="col-md-2">
+            <a href="{{ action('ProfileController@edit') }}" role="button" class="btn btn-primary">編集</a>
+        </div>
         <div class="row">
             <label class="col-md-2">氏名</label>
             <div class="col-md-8 mx-auto">

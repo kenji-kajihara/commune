@@ -17,13 +17,13 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="name">コミュニティネーム</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <input type="text" class="form-control" name="name" value="{{ $community_form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="description">コミュニティ概要</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="description" rows="20">{{ old('description') }}</textarea>
+                            <textarea class="form-control" name="description" rows="20">{{ $community_form->description }}</textarea>
                         </div>
                     </div>
 
