@@ -12,7 +12,7 @@
                 <a href="{{ action('ProfileController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
             <div class="col-md-2">
-                <a href="{{ action('ProfileController@myProfile') }}" role="button" class="btn btn-primary">MYプロフィール</a>
+                <a href="{{ action('ProfileController@myprofile') }}" role="button" class="btn btn-primary">MYプロフィール</a>
             </div>
             <div class="col-md-8">
                 <form action="{{ action('ProfileController@index') }}" method="get">
@@ -41,7 +41,7 @@
                                 <th width="10%">性別</th>
                                 <th width="10%">趣味</th>
                                 <th width="50%">自己紹介</th>
-                                <th width="10%">操作</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -53,14 +53,7 @@
                                     <td>{{ str_limit($profile->gender,100) }}</td>
                                     <td>{{ str_limit($profile->hobby,100) }}</td>
                                     <td>{{ str_limit($profile->introduction,250) }}</td>
-                                    <td>
-                                        <div>
-                                            <a href="{{ action('ProfileController@edit',['id' => $profile->id]) }}">編集</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ action('ProfileController@delete',['id' => $profile->id]) }}">削除</a>
-                                        </div>
-                                    </td>
+                                    
                                 </tr>
                                 @endforeach
                         </tbody>

@@ -13,6 +13,9 @@
                         @endforeach
                       </ul>
                     @endif
+                    <div class="col-md-2">
+                        <a href="{{ action('ProfileController@delete',['id' => $profile_form->id]) }}" role="button" class="btn btn-primary">削除</a>
+                    </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="name">氏名</label>
                         <div class="col-md-10">

@@ -23,7 +23,9 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::get('community/edit','CommunityController@edit');
     Route::post('community/edit','CommunityController@update');
     Route::get('community/delete','CommunityController@delete');
-    Route::get('community/description','CommunityController@description');
+    Route::get('community/description','CommunityController@description')->name('community.show');
+    Route::get('community/description/add','FollowController@add');
+    Route::get('community/description/delete','FollowController@delete');
     
     Route::get('profile/create','ProfileController@add');
     Route::post('profile/create','ProfileController@create');
@@ -31,7 +33,7 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::get('profile/edit','ProfileController@edit');
     Route::post('profile/edit','ProfileController@update');
     Route::get('profile/delete','ProfileController@delete');
-    Route::get('profile/myProfile','ProfileController@myProfile');
+    Route::get('profile/myprofile','ProfileController@myprofile');
 });
 
 

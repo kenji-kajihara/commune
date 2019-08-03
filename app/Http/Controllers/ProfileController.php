@@ -34,15 +34,15 @@ class ProfileController extends Controller
         $profile->fill($form);
         $profile->user_id = $user->id;
         $profile->save();
-        return redirect('commune/profile/create');
+        return redirect('commune/profile/');
     }
     
     public function index(Request $request){
         $cond_name=$request->cond_name;
         if($cond_name != NULL){
-            $posts= Profile::where('name',$cond_name)->get();
+            $posts = Profile::where('name',$cond_name)->get();
         }else{
-            $posts=Profile::all();
+            $posts = Profile::all();
         }
         return view('commune.profile.index',['posts'=>$posts,'cond_name'=>$cond_name]);
         
@@ -61,8 +61,10 @@ class ProfileController extends Controller
     }
     
     public function update(Request $request){
+
         $this->validate($request,Profile::$rules);
         $profile=Profile::find($request->id);
+        
         $profile_form=$request->all();
         unset($profile_form['_token']);
         $profile->fill($profile_form)->save();
@@ -70,25 +72,30 @@ class ProfileController extends Controller
         
     }
     
+    
+    public function myprofile(Request $request){
+        
+        $user = Auth::user();
+        $user_id = $user->id;
+        $myprofiles = Profile::where('user_id',$user_id)->get();
+        
+        if($myprofiles->isEmpty()){
+                return view('commune.profile.create');
+            }
+        
+        $myprofile = $myprofiles[0];
+
+        return view('commune.profile.myprofile',["myprofile"=>$myprofile]);
+    }
+    
     public function delete(Request $request){
+        
+        
         $profile = Profile::find($request->id);
         $profile->delete();
         return redirect('commune/profile');
         
     }
     
-    public function myProfile(Request $request){
-        $user = Auth::user();
-        $user_id = $user->id;
-        $myProfiles = Profile::where('user_id',$user_id)->get();
-        
-        if($myProfiles->isEmpty()){
-                return view('commune.profile.create');
-            }
-        
-        $myProfile = $myProfiles[0];
-
-        return view('commune.profile.myProfile',["myProfile"=>$myProfile]);
-    }
 }
  

@@ -7,30 +7,30 @@
             <h2>MYプロフィール</h2>
         </div>
         <div class="col-md-2">
-            <a href="{{ action('ProfileController@edit') }}" role="button" class="btn btn-primary">編集</a>
+            <a href="{{ action('ProfileController@edit',['id' => $myprofile->id]) }}" role="button" class="btn btn-primary">編集</a>
         </div>
         <div class="row">
             <label class="col-md-2">氏名</label>
             <div class="col-md-8 mx-auto">
-                {{ $myProfile->name }}
+                {{ $myprofile->name }}
             </div>
         </div>
         <div class="row">
             <label class="col-md-2">性別</label>
             <div class="col-md-8 mx-auto">
-                {{ $myProfile->gender }}
+                {{ $myprofile->gender }}
             </div>
         </div>
         <div class="row">
             <label class="col-md-2">趣味</label>
             <div class="col-md-8 mx-auto">
-                {{ $myProfile->hobby }}
+                {{ $myprofile->hobby }}
             </div>
         </div>
         <div class="row">
             <label class="col-md-2">自己紹介</label>
             <div class="col-md-8 mx-auto">
-                {{ $myProfile->introduction }}
+                {{ $myprofile->introduction }}
             </div>
         </div>
     </div>

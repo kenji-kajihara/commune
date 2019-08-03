@@ -11,8 +11,13 @@ class Follow extends Model
     public static $rules = array(
         'user_id' => 'required',
         'community_id' => 'required',
-        'created_at' => 'required',
-        'updated_at' => 'required',
-        
         );
+    
+    public function users(){
+        return $this->belongsTo('App\User');
+    }
+    
+    public function comunities(){
+        return $this->belongsTo('App\Community');
+    }
 }

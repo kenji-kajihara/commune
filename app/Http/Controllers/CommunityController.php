@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Community;
 use App\User;
+use App\Follow;
 use Illuminate\Support\Facades\Auth;    #追加してください。
 
 
@@ -72,10 +73,15 @@ class CommunityController extends Controller
     }
     
     public function description(Request $request){
+        
         $community = Community::find($request->id);
         $user_id = $community->user_id;
         $user= User::find($user_id);
+        $followers = Follow::where('community_id',$community->id)->get();
+        return view('commune.community.description',[
+                    "community"=>$community,
+                    "user"=>$user,
+                    "followers"=>$followers]);
         
-        return view('commune.community.description',["community"=>$community,"user"=>$user]);
     }
 }
