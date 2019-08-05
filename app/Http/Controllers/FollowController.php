@@ -18,11 +18,18 @@ class FollowController extends Controller
         $user_id=Auth::user()->id;
         $community_id = $request->id;
         $follow->created_at=Carbon::now();
+        $checkCommunity=Follow::where('community_id',$community_id)->get();
+        $checkUser=$checkCommunity->contains('user_id',$user_id);
+        if(!$checkUser){
         $follow->fill([
                         'user_id'=>$user_id, 
                         'community_id'=>$community_id]);
         $follow->save();
         return redirect()->route('community.show',['id'=>$community_id]);
+        }else{
+            return view('commune.community.error');
+        }
+        
     }
     
     public function delete(Request $request){

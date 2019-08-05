@@ -76,12 +76,15 @@ class CommunityController extends Controller
         
         $community = Community::find($request->id);
         $user_id = $community->user_id;
-        $user= User::find($user_id);
-        $followers = Follow::where('community_id',$community->id)->get();
+        $active_user= User::find($user_id);
+        $checkFollows = Follow::where('community_id',$community->id)->get();
+        $users = User::all();
+
         return view('commune.community.description',[
                     "community"=>$community,
-                    "user"=>$user,
-                    "followers"=>$followers]);
+                    "active_user"=>$active_user,
+                    "users"=>$users,
+                    "checkFollows"=>$checkFollows]);
         
     }
 }

@@ -22,17 +22,20 @@
         <div class="row">
             <label class="col-md-2">コミュニティ作成者</label>
             <div class="col-md-8 mx-auto">
-                {{ $user->name }}
+                {{ $active_user->name }}
             </div>
         </div>
         <div class="col-md-8 md-aux">
             <h3>コミュニティ参加者一覧</h3>
             <ul>
-                @foreach($followers as $follower)
-                @if($follower->id==$user->id)
-                <li>
-                    <h4>{{ $follower->user_id }}</h4>
-                </li>
+                @foreach($checkFollows as $checkFollow)
+                    @foreach($users as $user)
+                        @if($checkFollow->user_id == $user->id)
+                        <li>
+                            <h4>{{ $user->name }}</h4>
+                        </li>
+                        @endif
+                    @endforeach
                 @endforeach
             </ul>
         </div>
