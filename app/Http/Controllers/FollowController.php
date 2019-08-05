@@ -18,23 +18,33 @@ class FollowController extends Controller
         $user_id=Auth::user()->id;
         $community_id = $request->id;
         $follow->created_at=Carbon::now();
-        $checkCommunity=Follow::where('community_id',$community_id)->get();
-        $checkUser=$checkCommunity->contains('user_id',$user_id);
-        if(!$checkUser){
-        $follow->fill([
+        $checkFollow=Follow::where('community_id',$community_id)
+        ->where('user_id',$user_id)->get();
+        if(!$checkFollow->isEmpty()){
+            return view('commune.community.error');        
+        }else{
+
+            $follow->fill([
                         'user_id'=>$user_id, 
                         'community_id'=>$community_id]);
         $follow->save();
         return redirect()->route('community.show',['id'=>$community_id]);
-        }else{
-            return view('commune.community.error');
         }
         
     }
     
     public function delete(Request $request){
-        $follow = Follow::find($request->id);
-        $follow->delete();
-        return redirect('commune/community/description')->withInput();;
+        $community_id = $request->id;
+        $active_user_id = Auth::user()->id;
+        $followers = Follow::where('community_id',$community_id)
+        ->where('user_id',$active_user_id)->get();
+        if($followers->isEmpty()){
+        return view('commune.community.error2');
+        }else{
+            foreach($followers as $follow){
+            $follow->delete();
+            return redirect()->route('community.show',['id'=>$community_id]);
+            }
+        }
     }
 }
