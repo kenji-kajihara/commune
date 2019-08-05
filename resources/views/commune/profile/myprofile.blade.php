@@ -33,5 +33,22 @@
                 {{ $myprofile->introduction }}
             </div>
         </div>
+        <div class="row">
+            <label class="col-md-2">参加コミュニティ一覧</label>
+            <div class="col-md-8 mx-auto">
+                @foreach($follows as $follow)
+                    @foreach($communities as $community)
+                    <ul>
+                            @if($follow->community_id == $community->id)
+                            <li>
+                                {{ $community->name }}
+                            </li>
+                                
+                            @endif
+                    </ul>
+                    @endforeach
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection

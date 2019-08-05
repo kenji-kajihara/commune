@@ -24,8 +24,7 @@ class FollowController extends Controller
             return view('commune.community.error');        
         }else{
 
-            $follow->fill([
-                        'user_id'=>$user_id, 
+        $follow->fill([ 'user_id'=>$user_id, 
                         'community_id'=>$community_id]);
         $follow->save();
         return redirect()->route('community.show',['id'=>$community_id]);

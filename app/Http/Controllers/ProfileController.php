@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Profile;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Community;
+use App\Follow;
 
 
 class ProfileController extends Controller
@@ -74,18 +76,19 @@ class ProfileController extends Controller
     
     
     public function myprofile(Request $request){
-        
         $user = Auth::user();
         $user_id = $user->id;
         $myprofiles = Profile::where('user_id',$user_id)->get();
-        
         if($myprofiles->isEmpty()){
                 return view('commune.profile.create');
             }
-        
         $myprofile = $myprofiles[0];
-
-        return view('commune.profile.myprofile',["myprofile"=>$myprofile]);
+        
+        $follows= Follow::where('user_id',$user_id)->get();
+        $communities = Community::all();
+        return view('commune.profile.myprofile',["myprofile"=>$myprofile,
+        "follows"=>$follows,
+        "communities"=>$communities]);
     }
     
     public function delete(Request $request){

@@ -20,4 +20,5 @@ class Follow extends Model
     public function comunities(){
         return $this->belongsTo('App\Community');
     }
+    
 }
