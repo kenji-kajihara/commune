@@ -36,9 +36,9 @@ class FollowController extends Controller
         $community_id = $request->id;
         $active_user_id = Auth::user()->id;
         $followers = Follow::where('community_id',$community_id)
-        ->where('user_id',$active_user_id)->get();
+                            ->where('user_id',$active_user_id)->get();
         if($followers->isEmpty()){
-        return view('commune.community.error2');
+            return view('commune.community.error2');
         }else{
             foreach($followers as $follow){
             $follow->delete();

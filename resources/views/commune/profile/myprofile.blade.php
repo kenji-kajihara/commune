@@ -43,7 +43,6 @@
                             <li>
                                 {{ $community->name }}
                             </li>
-                                
                             @endif
                     </ul>
                     @endforeach

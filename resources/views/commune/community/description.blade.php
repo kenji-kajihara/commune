@@ -1,53 +1,47 @@
 @extends('layouts.commune')
-@section('title',"コミュニティ")
+@section('title',"コミュニティ参加画面")
 
 @section('content')
+ <main role="main">
+    <div class=container>
+    <div class="jumbotron">
+      <h1 class="display-3">{{ $community->name }}</h1>
+      <p class="lead">{{ $community->description }}</p>
+      <p>
+        <a class="btn btn-outline-primary btn-lg" href="{{ action('FollowController@add',['id' => $community->id]) }}"  role="button">Join</a>
+      </p>
+      <p>
+        <a class="btn btn-outline-danger btn-sm" href="{{ action('FollowController@delete',['id' => $community->id]) }}" role="button" >Leave</a>
+      </p>
+        @if($community->user_id == Auth::user()->id)
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="badge badge-success" href="{{ action('CommunityController@edit',['id' => $community->id]) }}">コミュニティ編集</a>
+                </div>
+                <div class="col-md-6">
+                    <a class="badge badge-danger" href="{{ action('CommunityController@delete',['id' => $community->id]) }}">コミュニティ削除</a>
+                </div>
+            </div>
+        @endif
+    </div>
+    </div>
     <div class="container">
-        <div class="row">
-            <h2>コミュニティ</h2>
-        </div>
-        
-        <div class="row">
-            <label class="col-md-2">コミュニティネーム</label>
-            <div class="col-md-8 mx-auto">
-                {{ $community->name }}
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-md-2">概要</label>
-            <div class="col-md-8 mx-auto">
-                {{ $community->description }}
-            </div>
-            </div>
-        <div class="row">
-            <label class="col-md-2">コミュニティ作成者</label>
-            <div class="col-md-8 mx-auto">
-                {{ $active_user->name }}
-            </div>
-        </div>
         <div class="col-md-8 md-aux">
             <h3>コミュニティ参加者一覧</h3>
             <ul>
-                @foreach($checkFollows as $checkFollow)
+                @foreach($check_follows as $check_follow)
                     @foreach($users as $user)
-                        @if($checkFollow->user_id == $user->id)
+                        @if($check_follow->user_id == $user->id)
                         <li>
-                            <h4>{{ $user->name }}</h4>
+                            <h4>{{ $user->profile->name }}</h4>
                         </li>
                         @endif
                     @endforeach
                 @endforeach
             </ul>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="{{ action('FollowController@add',['id' => $community->id]) }}" 
-                 role="button" class="btn btn-primary">参加</a>
-            </div>
-            <div class="col-md-6">
-                <a href="{{ action('FollowController@delete',['id' => $community->id]) }}" 
-                    role="button" class="btn btn-primary">退会</a>
-            </div>
-        </div>
+        
+        <p >コミュニティ製作者:{{ $create_user->profile->name }}</p>
     </div>
+</main>
 @endsection

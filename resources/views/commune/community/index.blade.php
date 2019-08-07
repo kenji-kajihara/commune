@@ -48,12 +48,6 @@
                                     <td>{{ str_limit($community->description,250) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('CommunityController@edit',['id' => $community->id]) }}">編集</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ action('CommunityController@delete',['id' => $community->id]) }}">削除</a>
-                                        </div>
-                                        <div>
                                             <a href="{{ action('CommunityController@description',['id' => $community->id]) }}">コミュニティへ</a>
                                         </div>
                                     </td>

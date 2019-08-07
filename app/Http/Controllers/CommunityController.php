@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Community;
 use App\User;
 use App\Follow;
+use App\Profile;
 use Illuminate\Support\Facades\Auth;    #追加してください。
 
 
@@ -37,9 +38,9 @@ class CommunityController extends Controller
         $cond_name=$request->cond_name;
         if($cond_name != NULL){
             $posts= Community::where('name',$cond_name)->get();
-            
         }else{
             $posts=Community::all();
+            
             
         }
         return view('commune.community.index',['posts'=>$posts,'cond_name'=>$cond_name]);
@@ -76,15 +77,16 @@ class CommunityController extends Controller
         
         $community = Community::find($request->id);
         $user_id = $community->user_id;
-        $active_user= User::find($user_id);
-        $checkFollows = Follow::where('community_id',$community->id)->get();
+        $create_user= User::find($user_id);
+        $check_follows = Follow::where('community_id',$community->id)->get();
         $users = User::all();
+        
 
         return view('commune.community.description',[
                     "community"=>$community,
-                    "active_user"=>$active_user,
+                    "create_user"=>$create_user,
                     "users"=>$users,
-                    "checkFollows"=>$checkFollows]);
+                    "check_follows"=>$check_follows]);
         
     }
 }

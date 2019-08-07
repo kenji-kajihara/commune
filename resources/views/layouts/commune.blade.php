@@ -24,7 +24,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ action('CommunityController@index') }}">コミュニティ一覧
+                                <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ action('ProfileController@index') }}">プロフィール一覧</a>
+                            </li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
                         @guest
@@ -65,14 +72,7 @@
             </main>
             <footer>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="{{ action('CommunityController@index') }}" role="button" class="btn btn-primary">コミュニティ一覧</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ action('ProfileController@index') }}" role="button" class="btn btn-primary">プロフィール一覧</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </footer>
         </div>
