@@ -32,6 +32,7 @@ class ProfileController extends Controller
         $form = $request->all();
         $profile = new Profile;
         unset($form['_token']);
+        
         $user = Auth::user();
         $profile->fill($form);
         $profile->user_id = $user->id;

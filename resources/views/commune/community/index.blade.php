@@ -32,9 +32,9 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
-                                <th width="10%">USER_ID</th>
-                                <th width="10%">ネーム</th>
+                                <th width="5%">ID</th>
+                                <th width="15%">コミュニティ製作者</th>
+                                <th width="20%">コミュニティネーム</th>
                                 <th width="50%">概要</th>
                                 <th width="10%">操作</th>
                             </tr>
@@ -43,7 +43,7 @@
                             @foreach($posts as $community)
                                 <tr>
                                     <th>{{ $community->id }}</th>
-                                    <th>{{ $community->user_id }}</th>
+                                    <th>{{ $community->user->profile->name }}</th>
                                     <td>{{ str_limit($community->name,100) }}</td>
                                     <td>{{ str_limit($community->description,250) }}</td>
                                     <td>

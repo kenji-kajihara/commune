@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Follow;
 use Illuminate\Support\Facades\Auth;
 
 class Community extends Model
@@ -17,7 +18,10 @@ class Community extends Model
         
         );
         
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
+    }
+    public function follows(){
+        return $this->hasMany('App\Follow');
     }
 }
