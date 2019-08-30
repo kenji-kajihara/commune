@@ -81,7 +81,7 @@ class ProfileController extends Controller
         $user_id = $user->id;
         $myprofiles = Profile::where('user_id',$user_id)->get();
         if($myprofiles->isEmpty()){
-                return view('commune.profile.create');
+                return redirect('commune/profile/create');
             }
         $myprofile = $myprofiles[0];
         
