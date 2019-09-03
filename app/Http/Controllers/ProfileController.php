@@ -110,9 +110,17 @@ class ProfileController extends Controller
         $user_id = $profile->user_id;
         $follows = Follow::where('user_id',$user_id)->get();
         $communities = Community::all();
+        
+        if(Auth::id() == $user_id){
+            return redirect('commune/profile/myprofile');
+        }else{
+        
         return view('commune.profile.show',['profile' => $profile,
         "follows"=>$follows,
         "communities"=>$communities]);
+        
+        }
+        
     }
     
 }
