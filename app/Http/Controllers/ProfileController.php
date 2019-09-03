@@ -28,6 +28,7 @@ class ProfileController extends Controller
     
     
     public function create(Request $request){
+        
         $this->validate($request, Profile::$rules);
         $form = $request->all();
         $profile = new Profile;
@@ -38,9 +39,11 @@ class ProfileController extends Controller
         $profile->user_id = $user->id;
         $profile->save();
         return redirect('commune/profile/');
+        
     }
     
     public function index(Request $request){
+        
         $cond_name=$request->cond_name;
         if($cond_name != NULL){
             $posts = Profile::where('name',$cond_name)->get();
@@ -77,6 +80,7 @@ class ProfileController extends Controller
     
     
     public function myprofile(Request $request){
+        
         $user = Auth::user();
         $user_id = $user->id;
         $myprofiles = Profile::where('user_id',$user_id)->get();

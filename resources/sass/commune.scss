@@ -24,8 +24,7 @@ body{
 }
 
 .list-group-item {
-    border-color: #fff;
-    background-color: #000;
+    
 }
 
 .login-box{
@@ -35,12 +34,26 @@ body{
 }
 
 .jumbotron {
-    background:#adb5bd;    
+    background: #F8FAD4;    
     text-align: center;
     border-bottom: 0.05rem solid #e5e5e5;
+    letter-spacing: .1em;
+    line-height: 1.7;
 }
+
 .jumbotron .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1.5rem;
+}
+
+.jumbotron .h2{
+
+    text-align: center;
+    letter-spacing: .1em;
+    line-height: 1.7;
+}
+
+.card {
+    padding: 20px;
 }
 
