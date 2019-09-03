@@ -37,6 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ action('ProfileController@index') }}">プロフィール一覧</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ action('ProfileController@myprofile') }}">MYプロフィール</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
