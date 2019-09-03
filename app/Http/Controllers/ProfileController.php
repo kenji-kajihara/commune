@@ -105,5 +105,15 @@ class ProfileController extends Controller
         
     }
     
+    public function get_profile(Request $request){
+        $profile = Profile::find($request->id);
+        $user_id = $profile->user_id;
+        $follows = Follow::where('user_id',$user_id)->get();
+        $communities = Community::all();
+        return view('commune.profile.show',['profile' => $profile,
+        "follows"=>$follows,
+        "communities"=>$communities]);
+    }
+    
 }
  

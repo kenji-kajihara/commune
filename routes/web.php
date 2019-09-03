@@ -34,6 +34,7 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::post('profile/edit','ProfileController@update');
     Route::get('profile/delete','ProfileController@delete');
     Route::get('profile/myprofile','ProfileController@myprofile');
+    Route::get('profile/show','ProfileController@get_profile');
 });
 
 

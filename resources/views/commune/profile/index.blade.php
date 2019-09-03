@@ -32,8 +32,6 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="5%">ID</th>
-                                <th width="5%">USER_ID</th>
                                 <th width="10%">氏名</th>
                                 <th width="10%">性別</th>
                                 <th width="10%">趣味</th>
@@ -44,9 +42,7 @@
                         <tbody>
                             @foreach($posts as $profile)
                                 <tr>
-                                    <th>{{ $profile->id }}</th>
-                                    <th>{{ $profile->user_id }}</th>
-                                    <td>{{ str_limit($profile->name,100) }}</td>
+                                    <td><a href="{{ action('ProfileController@get_profile', ['id' => $profile->id])}}">{{ str_limit($profile->name,100) }}</a></td>
                                     <td>{{ str_limit($profile->gender,100) }}</td>
                                     <td>{{ str_limit($profile->hobby,100) }}</td>
                                     <td>{{ str_limit($profile->introduction,250) }}</td>
