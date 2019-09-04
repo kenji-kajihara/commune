@@ -29,7 +29,7 @@
         <div class="row">
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-dark">
+                    <table class="table table-default">
                         <thead>
                             <tr>
                                 <th width="10%">氏名</th>
@@ -42,7 +42,7 @@
                         <tbody>
                             @foreach($posts as $profile)
                                 <tr>
-                                    <td><a href="{{ action('ProfileController@get_profile', ['id' => $profile->id])}}">{{ str_limit($profile->name,100) }}</a></td>
+                                    <td><a class="text-muted" href="{{ action('ProfileController@get_profile', ['id' => $profile->id])}}">{{ str_limit($profile->name,100) }}</a></td>
                                     <td>{{ str_limit($profile->gender,100) }}</td>
                                     <td>{{ str_limit($profile->hobby,100) }}</td>
                                     <td>{{ str_limit($profile->introduction,250) }}</td>

@@ -23,10 +23,12 @@
                 </div>
             </div>
         @endif
+        <p>コミュニティ製作者:{{ $create_user->profile->name }}</p>
     </div>
     </div>
-    <div class="container">
-        <div class="col-md-8 md-aux">
+    <div class="row">
+        <div class="card">
+        <div class="col-md-12 md-aux">
             <h3>コミュニティ参加者一覧</h3>
             <ul>
                 @foreach($check_follows as $check_follow)
@@ -40,8 +42,7 @@
                 @endforeach
             </ul>
         </div>
-        
-        <p >コミュニティ製作者:{{ $create_user->profile->name }}</p>
+        </div>
     </div>
 </main>
 @endsection

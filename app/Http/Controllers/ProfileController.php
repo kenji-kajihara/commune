@@ -18,11 +18,11 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user_id=$user->id;
         $profile=Profile::where('user_id',$user_id)->get();
-        if(!$profile->isEmpty()){
-                return view('commune.profile.error');
+        if($profile->isEmpty()){
+                return view('commune.profile.create');
             }
         
-        return view('commune.profile.create');
+        return view('commune.profile.error');
     }
     
     
@@ -59,6 +59,7 @@ class ProfileController extends Controller
         $user_id = $user->id;
         $profiles = Profile::where('user_id',$user_id)->get();
         $profile = $profiles[0];
+        
         if(empty($profile)){
             abort(404);
         }
@@ -84,9 +85,12 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user_id = $user->id;
         $myprofiles = Profile::where('user_id',$user_id)->get();
+        
         if($myprofiles->isEmpty()){
+            
                 return redirect('commune/profile/create');
             }
+            
         $myprofile = $myprofiles[0];
         
         $follows= Follow::where('user_id',$user_id)->get();

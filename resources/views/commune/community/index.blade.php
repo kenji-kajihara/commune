@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ action('CommunityController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('CommunityController@add') }}" role="button" class="btn btn-primary">コミュニティ作成</a>
             </div>
             <div class="col-md-8">
                 <form action="{{ action('CommunityController@index') }}" method="get">
@@ -29,26 +29,24 @@
         <div class="row">
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-dark">
+                    <table class="table table-default">
                         <thead>
                             <tr>
-                                <th width="5%">ID</th>
                                 <th width="15%">コミュニティ製作者</th>
                                 <th width="20%">コミュニティネーム</th>
                                 <th width="50%">概要</th>
-                                <th width="10%">操作</th>
+                                <th width="20%"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $community)
                                 <tr>
-                                    <th>{{ $community->id }}</th>
                                     <th>{{ $community->user->profile->name }}</th>
                                     <td>{{ str_limit($community->name,100) }}</td>
                                     <td>{{ str_limit($community->description,250) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('CommunityController@description',['id' => $community->id]) }}">コミュニティへ</a>
+                                            <a class="text-muted" href="{{ action('CommunityController@description',['id' => $community->id]) }}">コミュニティへ</a>
                                         </div>
                                     </td>
                                 </tr>

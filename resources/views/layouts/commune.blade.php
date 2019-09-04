@@ -28,7 +28,7 @@
             </button>
                     
             <div class="collapse navbar-collapse" id="navbarsExample04">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto ">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ action('CommunityController@index') }}">コミュニティ一覧
                         <span class="sr-only">(current)</span>

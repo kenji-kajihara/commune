@@ -25,13 +25,20 @@ class CommunityController extends Controller
 
         unset($form['_token']);
         
-        $user = Auth::user();
+        $user_id = Auth::id();
         
         $community->fill($form);
-        $community->user_id = $user->id;
+        $community->user_id = $user_id;
         $community->save();
         
+        $follow = new Follow;
+        $community_id = $community->id;
+        $follow->fill(['user_id' => $user_id,
+                        'community_id' => $community_id]);
+        $follow->save();
+        
         return redirect('commune/community/create');
+        
     }
     
     public function index(Request $request){
