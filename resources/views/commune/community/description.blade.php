@@ -7,13 +7,14 @@
     <div class="jumbotron">
       <h1 class="display-3">{{ $community->name }}</h1>
       <p class="lead">{{ $community->description }}</p>
+       @if($community->user_id != Auth::user()->id)
       <p>
         <a class="btn btn-outline-primary btn-lg" href="{{ action('FollowController@add',['id' => $community->id]) }}"  role="button">Join</a>
       </p>
       <p>
         <a class="btn btn-outline-danger btn-sm" href="{{ action('FollowController@delete',['id' => $community->id]) }}" role="button" >Leave</a>
       </p>
-        @if($community->user_id == Auth::user()->id)
+        @elseif($community->user_id == Auth::user()->id)
             <div class="row">
                 <div class="col-md-6">
                     <a class="badge badge-success" href="{{ action('CommunityController@edit',['id' => $community->id]) }}">コミュニティ編集</a>
