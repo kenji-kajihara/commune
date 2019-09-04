@@ -37,7 +37,7 @@ class CommunityController extends Controller
                         'community_id' => $community_id]);
         $follow->save();
         
-        return redirect('commune/community/create');
+        return redirect('commune/community');
         
     }
     
@@ -75,7 +75,15 @@ class CommunityController extends Controller
     
     public function delete(Request $request){
         $community = Community::find($request->id);
+        
+        $user_id = Auth::id();
+        $follow = Follow::where('community_id',$request->id)
+                        ->where('user_id',$user_id)->get();
+        $follow[0]->delete();
+        
         $community->delete();
+        
+        
         return redirect('commune/community');
         
     }
