@@ -76,10 +76,10 @@ class CommunityController extends Controller
     public function delete(Request $request){
         $community = Community::find($request->id);
         
-        $user_id = Auth::id();
-        $follow = Follow::where('community_id',$request->id)
-                        ->where('user_id',$user_id)->get();
-        $follow[0]->delete();
+        $followers = Follow::where('community_id',$request->id)->get();
+        foreach($followers as $follower){
+        $follower->delete();
+        }
         
         $community->delete();
         
