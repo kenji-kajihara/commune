@@ -23,25 +23,41 @@
                 </div>
             </div>
         @endif
-        <p>コミュニティ製作者:{{ $create_user->profile->name }}</p>
-    </div>
+        <p><a class="text-muted" href="{{ action('ProfileController@get_profile', ['id' => $create_user->profile->id])}}">コミュニティ製作者:{{ $create_user->profile->name }}</a></p>
     </div>
     <div class="row">
-        <div class="card">
-        <div class="col-md-12 md-aux">
-            <h3>コミュニティ参加者一覧</h3>
-            <ul>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+         コミュニティ参加者一覧
+        </button>
+        
+        <!-- モーダル -->
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">コミュニティ参加者一覧</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ul class="list-group">
                 @foreach($check_follows as $check_follow)
                     @foreach($users as $user)
                         @if($check_follow->user_id == $user->id)
-                        <li>
-                            <h4>{{ $user->profile->name }}</h4>
+                        <li class="list-group-item text-center">
+                            <h4><a class="text-muted" href="{{ action('ProfileController@get_profile', ['id' => $user->profile->id])}}">{{ $user->profile->name }}</a></h4>
                         </li>
                         @endif
                     @endforeach
                 @endforeach
-            </ul>
-        </div>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 </main>
