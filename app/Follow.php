@@ -18,7 +18,7 @@ class Follow extends Model
     }
     
     public function communities(){
-        return $this->belongsTo('App\Community');
+        return $this->belongsTo('App\Community','community_id');
     }
     
 }
