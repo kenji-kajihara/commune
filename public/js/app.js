@@ -49370,16 +49370,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/welcome.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/welcome.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\nError: ENOENT: no such file or directory, open '/home/ec2-user/environment/commune/resources/sass/welcome.scss'\n    at runLoaders (/home/ec2-user/environment/commune/node_modules/webpack/lib/NormalModule.js:313:20)\n    at /home/ec2-user/environment/commune/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /home/ec2-user/environment/commune/node_modules/loader-runner/lib/LoaderRunner.js:203:19\n    at process.nextTick (/home/ec2-user/environment/commune/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:73:15)\n    at processTicksAndRejections (internal/process/task_queues.js:79:9)");
+
+/***/ }),
+
 /***/ 0:
-/*!*******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/commune.scss ***!
-  \*******************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/commune.scss ./resources/sass/welcome.scss ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/ec2-user/environment/commune/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /home/ec2-user/environment/commune/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/commune/resources/sass/commune.scss */"./resources/sass/commune.scss");
+__webpack_require__(/*! /home/ec2-user/environment/commune/resources/sass/commune.scss */"./resources/sass/commune.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/commune/resources/sass/welcome.scss */"./resources/sass/welcome.scss");
 
 
 /***/ })
