@@ -8,7 +8,7 @@
             <h2>プロフィール一覧</h2>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <a href="{{ action('ProfileController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
             <div class="col-md-8">
@@ -42,7 +42,7 @@
                         <tbody>
                             @foreach($posts as $profile)
                                 <tr>
-                                    <td><a class="text-muted" href="{{ action('ProfileController@get_profile', ['id' => $profile->id])}}">{{ str_limit($profile->name,100) }}</a></td>
+                                    <td><a  href="{{ action('ProfileController@get_profile', ['id' => $profile->id])}}">{{ str_limit($profile->name,100) }}</a></td>
                                     <td>{{ str_limit($profile->gender,100) }}</td>
                                     <td>{{ str_limit($profile->hobby,100) }}</td>
                                     <td>{{ str_limit($profile->introduction,250) }}</td>

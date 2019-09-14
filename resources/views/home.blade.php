@@ -13,11 +13,7 @@
                     @endif
 
                    <h2> You are logged in!</h2>
-                   <div class="row">
-                        <div class="offset-md-3">
-                            <a href="{{ action('ProfileController@add') }}" role="button" class="btn bt-block btn-primary">プロフィール作成</a>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>

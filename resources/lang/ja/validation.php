@@ -30,7 +30,7 @@ return [
         'array' => 'The :attribute must have between :min and :max items.',
     ],
     'boolean' => 'The :attribute field must be true or false.',
-    'confirmed' => 'The :attribute confirmation does not match.',
+    'confirmed' => ':attribute 確認と合致しません。',
     'date' => 'The :attribute is not a valid date.',
     'date_equals' => 'The :attribute must be a date equal to :date.',
     'date_format' => 'The :attribute does not match the format :format.',
@@ -87,7 +87,7 @@ return [
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => ':attributeは :min 文字以上必要です。',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'not_in' => 'The selected :attribute is invalid.',
@@ -150,7 +150,8 @@ return [
         'gender' => '性別',
         'hobby' => '趣味',
         'introduction' => '自己紹介',
-        'description' => 'コミュニティ概要'
+        'description' => 'コミュニティ概要',
+        'password' => 'パスワード'
         ],
 
 ];

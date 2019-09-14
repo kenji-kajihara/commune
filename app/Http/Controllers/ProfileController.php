@@ -84,20 +84,18 @@ class ProfileController extends Controller
         
         $user = Auth::user();
         $user_id = $user->id;
-        $myprofiles = Profile::where('user_id',$user_id)->get();
+        $myprofile = Profile::where('user_id',$user_id)->firstOrFail();
         
-        if($myprofiles->isEmpty()){
+        if(empty($myprofile)){
             
                 return redirect('commune/profile/create');
             }
-            
-        $myprofile = $myprofiles[0];
         
         $follows= Follow::where('user_id',$user_id)->get();
-        $communities = Community::all();
         return view('commune.profile.myprofile',["myprofile"=>$myprofile,
         "follows"=>$follows,
-        "communities"=>$communities]);
+        ]);
+        
     }
     
     public function delete(Request $request){
