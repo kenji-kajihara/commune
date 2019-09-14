@@ -1,41 +1,54 @@
 body{
+    font-family: 'Noto Sans Japanese','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',Osaka,sans-serif;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #C6EEE5;
-    color: #212529;
+    background-color: #E3E3E3;
+    color: #717171;
+}
+
+li {
+    list-style: none;
 }
 
 .navbar-laravel {
-    background-color: #3EBC9E;
+    background-color: #E3E3E3;
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     margin-bottom: 40px;
 }
 
 .navbar-brand {
-    color: #fff !important;
+    color: #717171 ;
 }
 
 .nav-link{
-    color: #E3E3E3 !important;
+    color: #717171 ;
+}
+
+.table-default a{
+    color: #C7243A;
 }
 
 .table-default{
-    background: #AFD3C3;
-    color: #fff;
+    background: #FFFFFF;
+    color: #717171;
+    border-radius: 5px;
+    border-spacing: 0;
+    border-collapse: separate
 }
 
-.list-group-item {
-    
+.table-default a{
+    color: #007FB1;
 }
+
 
 .login-box{
-    background-color: #AFD3C3;
+    background-color: #FFFFFF;
     margin-top: 30px;
     
 }
 
 .jumbotron {
-    background: #F8FAD4;    
+    background: #FFFFFF;    
     text-align: center;
     border-bottom: 0.05rem solid #e5e5e5;
     letter-spacing: .1em;

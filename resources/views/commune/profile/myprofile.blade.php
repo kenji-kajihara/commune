@@ -47,13 +47,13 @@
             <div class="mx-auto">
                 @foreach($follows as $follow)
                     @foreach($communities as $community)
-                    <ul class="list-group">
-                            @if($follow->community_id == $community->id)
-                            <li class="list-group-item">
+                        <ul>
+                        @if($follow->community_id == $community->id)
+                            <li>
                                 <a href="{{ action('CommunityController@description',['id' => $community->id]) }}">{{ $community->name }}</a>
                             </li>
-                            @endif
-                    </ul>
+                        @endif
+                        </ul>
                     @endforeach
                 @endforeach
             </div>
