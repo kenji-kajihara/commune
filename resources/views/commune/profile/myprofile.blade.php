@@ -46,11 +46,9 @@
             <h5>参加コミュニティ一覧</h5>
             <ul class="communities-list mx-auto">
                 @foreach($follows as $follow)
-                 
                        <li>
                            <a href="{{ action('CommunityController@description',['id' => $follow->community_id]) }}">{{ $follow->communities->name }}</a>
                        </li>
-                    
                 @endforeach
             </ul>
             </div>
