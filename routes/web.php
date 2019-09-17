@@ -43,3 +43,4 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/map', 'map');
