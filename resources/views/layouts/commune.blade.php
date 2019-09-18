@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/commune.css') }}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     
 </head>
 <body>
@@ -29,6 +30,9 @@
                     
             <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/home') }}">HOME</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ action('CommunityController@index') }}">コミュニティ一覧
                         <span class="sr-only">(current)</span>
@@ -44,7 +48,7 @@
                         <a class="nav-link" href="{{ action('PostController@index') }}">掲示板</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/map">MAP</a>
+                        <a class="nav-link" href="{{ url('/map') }}">MAP</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -71,7 +75,7 @@
     @yield('content')
 
     <!-- google map api -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoFOPV9hQvUh44hWIb-SRFJFIH22Yf9n4&libraries=places"
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5UgK0cxB1_kCF4_KWnr_0KRgVXd9UwVQ&libraries=places"
     ></script>
     	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

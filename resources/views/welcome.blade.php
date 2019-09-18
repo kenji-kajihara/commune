@@ -41,7 +41,7 @@
         
               <main role="main" class="inner cover">
                 <h1 class="cover-heading">Commune</h1>
-                <p class="lead">自由に作れるコミュニティサイト</p>
+                <p class="lead">映画で繋がるコミュニティサイト</p>
                 <p class="lead">
                   <a href="{{ route('login') }}" class="btn btn-lg btn-secondary">Login</a>
                 </p>
