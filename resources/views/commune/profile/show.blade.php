@@ -38,21 +38,17 @@
         </div>
         </div>
         
-        <div class="row col-md-3">
-            <div class="card col-md-12">
+        <div class="row community col-md-3">
+            <div class="card col-md-12 text-center">
             <h5>参加コミュニティ一覧</h5>
             <div class="mx-auto">
+               <ul class="communities-list pl-0 h5">
                 @foreach($follows as $follow)
-                    @foreach($communities as $community)
-                    <ul class="list-group list">
-                            @if($follow->community_id == $community->id)
-                            <li class="list-group-item">
-                                <a href="{{ action('CommunityController@description',['id' => $community->id]) }}">{{ $community->name }}</a>
-                            </li>
-                            @endif
-                    </ul>
-                    @endforeach
+                       <li class="text-center">
+                           <a href="{{ action('CommunityController@description',['id' => $follow->community_id]) }}">{{ $follow->communities->name }}</a>
+                       </li>
                 @endforeach
+            </ul>
             </div>
             </div>
         </div>

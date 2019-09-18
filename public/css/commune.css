@@ -13,17 +13,17 @@ li {
 }
 
 .navbar-laravel {
-  background-color: #E3E3E3;
+  background-color: #555555;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   margin-bottom: 40px;
 }
 
 .navbar-brand {
-  color: #717171;
+  color: #fff;
 }
 
 .nav-link {
-  color: #717171;
+  color: #fff;
 }
 
 .table-default a {
@@ -66,7 +66,11 @@ li {
   line-height: 1.7;
 }
 
-.card {
+.community .card {
   padding: 20px;
+}
+
+.icon {
+  color: #3E90BA;
 }
 

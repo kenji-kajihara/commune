@@ -34,17 +34,17 @@
         
         
         </div>
-        <div class="row mx-auto">
-        <div class="col-md-2">
-            <a href="{{ action('ProfileController@edit',['id' => $myprofile->id]) }}" role="button" class="btn btn-primary btn-lg">編集</a>
+        <div class="row">
+        <div class="col-md-8 mx-auto">
+            <a href="{{ action('ProfileController@edit',['id' => $myprofile->id]) }}" role="button" class="btn btn-primary btn-lg btn-block">プロフィール編集</a>
         </div>
         </div>
         </div>
         
-        <div class="row col-md-3">
-            <div class="card col-md-12">
+        <div class="row community col-md-3">
+            <div class="card col-md-12 text-center ">
             <h5>参加コミュニティ一覧</h5>
-            <ul class="communities-list mx-auto">
+            <ul class="communities-list pl-0 h5">
                 @foreach($follows as $follow)
                        <li>
                            <a href="{{ action('CommunityController@description',['id' => $follow->community_id]) }}">{{ $follow->communities->name }}</a>

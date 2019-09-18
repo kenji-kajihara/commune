@@ -48,7 +48,7 @@ class ProfileController extends Controller
         if($cond_name != NULL){
             $posts = Profile::where('name',$cond_name)->get();
         }else{
-            $posts = Profile::all();
+            $posts = Profile::orderBy('created_at', 'desc')->paginate(10);
         }
         return view('commune.profile.index',['posts'=>$posts,'cond_name'=>$cond_name]);
         
