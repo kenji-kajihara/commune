@@ -4,13 +4,13 @@
 
 @section('content')
     <div class="container">
-        <div class="jumbotron">
-        <div class="post-head text-left">
+        <div class="jumbotron pt-5">
+        <div class="post-head text-left border-bottom">
             <h1>{{ $post->title }}</h1>
             <p>{!! nl2br(e($post->body)) !!}</p>
         </div>
         
-        <div class="post-body text-left">
+        <div class="post-body text-left mt-4">
             <h2>コメント</h2>
             <form class="mb-4" method="POST" action="{{ route('comment.store') }}">
                 @csrf

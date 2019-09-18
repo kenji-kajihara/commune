@@ -46,7 +46,7 @@ class CommunityController extends Controller
         if($cond_name != NULL){
             $posts= Community::where('name',$cond_name)->get();
         }else{
-            $posts=Community::all();
+            $posts=Community::orderBy('created_at', 'desc')->paginate(10);
             
             
         }

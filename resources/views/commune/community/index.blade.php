@@ -53,6 +53,9 @@
                                 @endforeach
                         </tbody>
                     </table>
+                    <div class="col-md-12 d-flex justify-content-center mb-5">
+                        {{ $posts->links() }}
+                    </div>
                 </div>
             </div>
         </div>
