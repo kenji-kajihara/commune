@@ -1,64 +1,37 @@
 @extends('layouts.commune')
 @section('title','記事投稿')
 @section('content')
-    <div class="container mt-4">
-        <div class="border p-4">
-            <h1 class="h5 mb-4">
-                投稿の新規作成
-            </h1>
-
-            <form method="POST" action="{{ route('post.store') }}">
-                @csrf
-
-                <fieldset class="mb-4">
-                    <div class="form-group">
-                        <label for="title">
-                            タイトル
-                        </label>
-                        <input
-                            id="title"
-                            name="title"
-                            class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
-                            value="{{ old('title') }}"
-                            type="text"
-                        >
-                        @if ($errors->has('title'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
-                            </div>
-                        @endif
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>新規作成</h2>
+                <form method="POST" action="{{ route('post.store') }}" >
+                    @csrf
+                    @if (count($errors) > 0)
+                      <ul>
+                        @foreach($errors->all() as $e)
+                            <li>{{ $e }}</li>
+                        @endforeach
+                      </ul>
+                    @endif
+                    <div class="form-group row">
+                        <label class="col-md-2" for="title">タイトル</label>
+                        <div class="col-md-10">
+                            <input id="title" type="text" class="form-control"  name="title" value="{{ old('name') }}">
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="body">
-                            本文
-                        </label>
-
-                        <textarea
-                            id="body"
-                            name="body"
-                            class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}"
-                            rows="4"
-                        >{{ old('body') }}</textarea>
-                        @if ($errors->has('body'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('body') }}
-                            </div>
-                        @endif
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">内容</label>
+                        <div class="col-md-10">
+                            <textarea id="body" class="form-control" name="body" rows="20">{{ old('description') }}</textarea>
+                        </div>
                     </div>
-
-                    <div class="mt-5">
-                        <a class="btn btn-secondary" href="{{ route('post.index') }}">
-                            キャンセル
-                        </a>
-
-                        <button type="submit" class="btn btn-primary">
+                        
+                    <button type="submit" class="btn btn-primary">
                             投稿する
                         </button>
-                    </div>
-                </fieldset>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 @endsection
-

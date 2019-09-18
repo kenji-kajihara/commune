@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class FollowController extends Controller
 {
-    public function add(Request $request){
+    public function join(Request $request){
         $follow= new Follow;
 
         $user_id=Auth::user()->id;
@@ -32,7 +32,7 @@ class FollowController extends Controller
         
     }
     
-    public function delete(Request $request){
+    public function leave(Request $request){
         $community_id = $request->id;
         $active_user_id = Auth::user()->id;
         $followers = Follow::where('community_id',$community_id)

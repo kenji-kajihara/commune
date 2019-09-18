@@ -9,11 +9,19 @@
       <p class="lead">{{ $community->description }}</p>
        @if($community->user_id != Auth::user()->id)
       <p>
-        <a class="btn btn-outline-primary btn-lg" href="{{ action('FollowController@add',['id' => $community->id]) }}"  role="button">Join</a>
+        <form  method="POST" action="{{ action('FollowController@join') }}">
+          @csrf
+          <input class="btn btn-outline-primary btn-lg" type="submit" value="join"/>
+          <input type="hidden" value="{{ $community->id }}" name="id"/>
       </p>
       <p>
-        <a class="btn btn-outline-danger btn-sm" href="{{ action('FollowController@delete',['id' => $community->id]) }}" role="button" >Leave</a>
+      </form>
+      <form  method="POST" action="{{ action('FollowController@leave') }}">
+          @csrf
+          <input class="btn btn-outline-danger btn-lg" type="submit" value="Leave"/>
+          <input type="hidden" value="{{ $community->id }}" name="id"/>
       </p>
+      </form>
         @elseif($community->user_id == Auth::user()->id)
             <div class="row">
                 <div class="col-md-6">

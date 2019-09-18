@@ -24,8 +24,8 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::post('community/edit','CommunityController@update');
     Route::get('community/delete','CommunityController@delete');
     Route::get('community/description','CommunityController@description')->name('community.show');
-    Route::get('community/description/add','FollowController@add');
-    Route::get('community/description/delete','FollowController@delete');
+    Route::post('community/description/join','FollowController@join');
+    Route::post('community/description/leave','FollowController@leave');
     
     Route::get('profile/create','ProfileController@add');
     Route::post('profile/create','ProfileController@create');
