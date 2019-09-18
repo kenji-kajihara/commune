@@ -35,6 +35,8 @@ Route::group(['prefix' => 'commune','middleware'=>'auth'], function() {
     Route::get('profile/delete','ProfileController@delete');
     Route::get('profile/myprofile','ProfileController@myprofile');
     Route::get('profile/show','ProfileController@get_profile');
+    
+    Route::resource('post', 'PostController', ['only' =>['index','create','store'] ]);
 });
 
 

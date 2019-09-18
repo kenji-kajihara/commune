@@ -8,10 +8,7 @@ use App\Comment;
 
 class Post extends Model
 {
-    protected $fillavle = [
-        'title',
-        'body',
-        ];
+    protected $guarded = ['id'];
         
     public function comments(){
         
