@@ -6,15 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    protected $fillable = [
-        
-        'body',
-        
-        ];
+    protected $guarded = ['id'];
         
         
-    public functionposy()
+    public function post()
     {
-        return $this->belongsTo('App\Post')
+        return $this->belongsTo('App\Post');
+    }
+    
+    public function user(){
+        
+        return $this->belongsTo('App\User');
     }
 }

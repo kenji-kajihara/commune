@@ -42,14 +42,6 @@ li {
   color: #007FB1;
 }
 
-.communities-list  {
-  font-size: 20px;
-  padding-left: 0;
-  padding-bottom: 10px;
-  line-height: 1.7;
-}
-
-
 .login-box {
   background-color: #FFFFFF;
   margin-top: 30px;
@@ -74,7 +66,7 @@ li {
   line-height: 1.7;
 }
 
-.card {
+.community .card {
   padding: 20px;
 }
 
