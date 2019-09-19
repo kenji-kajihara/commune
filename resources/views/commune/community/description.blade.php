@@ -8,20 +8,23 @@
       <h1 class="display-3">{{ $community->name }}</h1>
       <p class="lead">{{ $community->description }}</p>
        @if($community->user_id != Auth::user()->id)
-      <p>
-        <form  method="POST" action="{{ action('FollowController@join') }}">
-          @csrf
-          <input class="btn btn-outline-primary btn-lg" type="submit" value="join"/>
-          <input type="hidden" value="{{ $community->id }}" name="id"/>
-      </p>
-      <p>
-      </form>
-      <form  method="POST" action="{{ action('FollowController@leave') }}">
-          @csrf
-          <input class="btn btn-outline-danger btn-lg" type="submit" value="Leave"/>
-          <input type="hidden" value="{{ $community->id }}" name="id"/>
-      </p>
-      </form>
+         @if($community->follows->where('user_id',Auth::user()->id)->isEmpty())
+          <p>
+            <form  method="POST" action="{{ action('FollowController@join') }}">
+              @csrf
+              <input class="btn btn-outline-primary btn-lg" type="submit" value="join"/>
+              <input type="hidden" value="{{ $community->id }}" name="id"/>
+          </p>
+         @else
+          <p>
+          </form>
+          <form  method="POST" action="{{ action('FollowController@leave') }}">
+              @csrf
+              <input class="btn btn-outline-danger btn-lg" type="submit" value="Leave"/>
+              <input type="hidden" value="{{ $community->id }}" name="id"/>
+          </p>
+          </form>
+          @endif
         @elseif($community->user_id == Auth::user()->id)
             <div class="row">
                 <div class="col-md-6">
