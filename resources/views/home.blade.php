@@ -37,6 +37,53 @@
       <!-- /.col-lg-4 -->
     </div>
     
+        <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">コミュニティ
+          <span class="text-muted">集まろう</span>
+        </h2>
+        <p class="lead">皆さんが自由にコミュニティを作る事ができます。
+        好きな映画、俳優、アクションやホラーといったジャンル、様々なテーマをもとに集まりましょう！</p>
+      </div>
+      <div class="col-md-5 text-center">
+        <i class="fas fa-user-friends fa-10x mb-3 icon" style=""></i>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">プロフィール
+          <span class="text-muted">友達を探そう</span>
+        </h2>
+        <p class="lead">同じ映画やジャンル、俳優を好きな人を探してみましょう！その人がどんなコミュニティに入っているかも確認できます！</p>
+      </div>
+      <div class="col-md-5 text-center">
+        <i class="fas fa-user fa-10x mb-3 icon"></i>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">掲示板
+          <span class="text-muted">繋がろう</span>
+        </h2>
+        <p class="lead">皆さんは自由に投稿することができます。映画レビューや、名シーンについてなど、好きな話をしてみましょう！</p>
+      </div>
+      <div class="col-md-5 text-center">
+       <i class="fas fa-comments fa-10x mb-3 icon"></i>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+
+    
   </div>
     
 
