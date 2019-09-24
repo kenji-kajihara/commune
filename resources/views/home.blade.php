@@ -19,7 +19,7 @@
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>コミュニティ</h1>
-            <p>皆さんが自由にコミュニティを作る事ができます。
+            <p>皆さんが自由にコミュニティを作る事ができます。<br>
         好きな映画、俳優、アクションやホラーといったジャンル、様々なテーマをもとに集まりましょう！</p>
             <p>
               <a class="btn btn-secondary" href="{{ action('CommunityController@index') }}" role="button">一覧を見る &raquo;</a>
@@ -32,7 +32,7 @@
         <div class="container">
           <div class="carousel-caption">
             <h1>プロフィール</h1>
-            <p>同じ映画やジャンル、俳優を好きな人を探してみましょう！その人がどんなコミュニティに入っているかも確認できます！</p>
+            <p>同じ映画やジャンル、俳優を好きな人を探してみましょう！<br> その人がどんなコミュニティに入っているかも確認できます！</p>
             <p>
               <a class="btn btn-secondary" href="{{ action('ProfileController@index') }}" role="button">一覧を見る &raquo;</a>
             </p>
@@ -43,10 +43,10 @@
         <img class="third-slide" src="storage/image/cinema.jpg" alt="Third slide">
         <div class="container">
           <div class="carousel-caption text-right">
-            <h1>掲示板</h1>
-            <p>皆さんは自由に投稿することができます。映画レビューや、名シーンについてなど、好きな話をしてみましょう！</p>
+            <h1>MAP</h1>
+            <p>近くの映画館を検索することができます。<br> 住所や施設等を、映画館に続けて入力することで、簡単に検索したい付近の映画館を探し出してみましょう！<p>
             <p>
-              <a class="btn btn-secondary" href="{{ action('PostController@index') }}" role="button">一覧を見る &raquo;</a>
+              <a class="btn btn-secondary" href="{{ url('/map') }}" role="button">映画館を探す &raquo;</a>
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@
   <div class="container marketing">
     <div class="row col-md-12 text-center">
       <div class="col-lg-4">
-        <i class="fas fa-user-friends fa-10x mb-3 icon" style=""></i>
+        <i class="fas fa-comments fa-10x mb-3 icon" style=""></i>
         <h2>コミュニティ</h2>
         <p>コミュニティに参加しよう！</p>
         <p>
@@ -76,7 +76,7 @@
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <i class="fas fa-user fa-10x mb-3 icon"></i>
+        <i class="fas fa-user-friends fa-10x mb-3 icon"></i>
         <h2>プロフィール</h2>
         <p>映画友達を探そう！</p>
         <p>
@@ -85,11 +85,11 @@
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <i class="fas fa-comments fa-10x mb-3 icon"></i>
-        <h2>掲示板</h2>
-        <p>映画について語ろう！</p>
+        <i class="fas fa-map-marker-alt fa-10x mb-3 icon"></i>
+        <h2>MAP</h2>
+        <p>近くの映画館を探そう！</p>
         <p>
-          <a class="btn btn-secondary" href="{{ action('PostController@index') }}" role="button">一覧を見る &raquo;</a>
+          <a class="btn btn-secondary" href="{{ url('/map') }}" role="button">映画館を探す &raquo;</a>
         </p>
       </div>
       <!-- /.col-lg-4 -->
@@ -106,7 +106,7 @@
         好きな映画、俳優、アクションやホラーといったジャンル、様々なテーマをもとに集まりましょう！</p>
       </div>
       <div class="col-md-5 text-center">
-        <i class="fas fa-user-friends fa-10x mb-3 icon" style=""></i>
+        <i class="fas fa-comments fa-10x mb-3 icon" style=""></i>
       </div>
     </div>
 
@@ -120,7 +120,7 @@
         <p class="lead">同じ映画やジャンル、俳優を好きな人を探してみましょう！その人がどんなコミュニティに入っているかも確認できます！</p>
       </div>
       <div class="col-md-5 text-center">
-        <i class="fas fa-user fa-10x mb-3 icon"></i>
+        <i class="fas fa-user-friends fa-10x mb-3 icon"></i>
       </div>
     </div>
 
@@ -128,13 +128,14 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">掲示板
-          <span class="text-muted">繋がろう</span>
+        <h2 class="featurette-heading">
+          <span class="text-muted">映画館に行ってみよう</span>
         </h2>
-        <p class="lead">皆さんは自由に投稿することができます。映画レビューや、名シーンについてなど、好きな話をしてみましょう！</p>
+        <p class="lead">映画館に続いて、住所や施設名を入力すると、検索ワード付近の映画館を探し出すことができます。
+        気になる場所の映画館を探して直接に行ってみましょう！</p>
       </div>
       <div class="col-md-5 text-center">
-       <i class="fas fa-comments fa-10x mb-3 icon"></i>
+       <i class="fas fa-map-marker-alt fa-10x mb-3 icon"></i>
       </div>
     </div>
 

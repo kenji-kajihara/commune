@@ -45,9 +45,6 @@
                         <a class="nav-link" href="{{ action('ProfileController@myprofile') }}">MYプロフィール</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ action('PostController@index') }}">掲示板</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/map') }}">MAP</a>
                     </li>
                 </ul>
