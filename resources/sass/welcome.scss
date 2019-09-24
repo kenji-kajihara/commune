@@ -6,7 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #717171;
+  color: #fff;
 }
 
 /* Custom default button */
@@ -27,10 +27,11 @@ html,
 body {
   height: 100%;
   background-color: #E3E3E3;
+  background-image: url('storage/image/TOP.jpg');
   font-family: 'Noto Sans Japanese','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',Osaka,sans-serif;
 }
 body {
-  color: #717171;
+  color: #fff;
   text-align: center;
 }
 
@@ -70,14 +71,14 @@ body {
 
 .nav-masthead .nav-link {
   padding: 0.25rem 0;
-  color: #717171;
+  color: #fff;
   background-color: transparent;
   border-bottom: 0.25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: #717171;
+  border-bottom-color: #fff;
 }
 
 .nav-masthead .nav-link + .nav-link {

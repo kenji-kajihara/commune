@@ -2,9 +2,67 @@
 
 @section('content')
 <main role="main">
-  <header class="mb-5">
-    <h1 class="text-center">映画で繋がるコミュニティサイト</h1>
-  </header>
+  
+    <header class="mb-5">
+     <h1 class="text-center">映画で繋がるコミュニティサイト</h1>
+    </header>
+  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="first-slide" src="storage/image/community.jpg" alt="First slide">
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>コミュニティ</h1>
+            <p>皆さんが自由にコミュニティを作る事ができます。
+        好きな映画、俳優、アクションやホラーといったジャンル、様々なテーマをもとに集まりましょう！</p>
+            <p>
+              <a class="btn btn-secondary" href="{{ action('CommunityController@index') }}" role="button">一覧を見る &raquo;</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="second-slide" src="storage/image/profile.jpg" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>プロフィール</h1>
+            <p>同じ映画やジャンル、俳優を好きな人を探してみましょう！その人がどんなコミュニティに入っているかも確認できます！</p>
+            <p>
+              <a class="btn btn-secondary" href="{{ action('ProfileController@index') }}" role="button">一覧を見る &raquo;</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="third-slide" src="storage/image/cinema.jpg" alt="Third slide">
+        <div class="container">
+          <div class="carousel-caption text-right">
+            <h1>掲示板</h1>
+            <p>皆さんは自由に投稿することができます。映画レビューや、名シーンについてなど、好きな話をしてみましょう！</p>
+            <p>
+              <a class="btn btn-secondary" href="{{ action('PostController@index') }}" role="button">一覧を見る &raquo;</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
   
   <div class="container marketing">
     <div class="row col-md-12 text-center">
