@@ -2,11 +2,7 @@
 
 @section('content')
 <main role="main">
-  
-    <header class="mb-5">
-     <h1 class="text-center">映画で繋がるコミュニティサイト</h1>
-    </header>
-  
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

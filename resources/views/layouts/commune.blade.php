@@ -21,7 +21,7 @@
 </head>
 <body>
  
-        <nav class="navbar navbar-expand-md navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-laravel fixed-top">
             <a class="navbar-brand" href="{{ url('/') }}">Commune</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
                         aria-expanded="false" aria-label="Toggle navigation">
