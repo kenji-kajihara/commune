@@ -6,17 +6,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\DB; 
 use App\Post;
+use App\Community;
 
 class PostController extends Controller
 {
     
     public function index(Request $request){
         $community_id = $request->id;
+        $community_name = Community::where('id',$community_id)->firstOrFail()->name;
         $posts = Post::where('community_id',$community_id)->get();
-        
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         
-        return view('commune.post.index', ['posts' => $posts,'community_id' => $community_id]);
+        return view('commune.post.index', [
+            'posts' => $posts,
+            'community_id' => $community_id,
+            'community_name' => $community_name
+            ]);
     }
     
     

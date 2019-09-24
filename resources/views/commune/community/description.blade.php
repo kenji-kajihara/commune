@@ -20,7 +20,7 @@
           </form>
           <form  method="POST" action="{{ action('FollowController@leave') }}">
               @csrf
-              <input class="btn btn-outline-danger btn-lg" type="submit" value="Leave"/>
+              <input class="btn btn-outline-danger btn-sm" type="submit" value="Leave"/>
               <input type="hidden" value="{{ $community->id }}" name="id"/>
           </p>
           </form>
@@ -38,11 +38,12 @@
         <p><a class="text-muted" href="{{ action('ProfileController@get_profile', ['id' => $create_user->profile->id])}}">コミュニティ製作者:{{ $create_user->profile->name }}</a></p>
     </div>
     <div class="row">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+        <button type="button" class="btn btn-primary col-md-6" data-toggle="modal" data-target="#exampleModalScrollable">
          コミュニティ参加者一覧
         </button>
-        <a class="btn btn-secondary" href="{{ action('PostController@index', ['id' => $community->id]) }}" role="button">一覧を見る &raquo;</a>
-        
+        @if($community->follows->where('user_id',Auth::user()->id)->isNotEmpty())
+         <a class="btn btn-secondary col-md-6" href="{{ action('PostController@index', ['id' => $community->id]) }}" role="button">掲示板を見る &raquo;</a>
+        @endif
         <!-- モーダル -->
         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable" role="document">

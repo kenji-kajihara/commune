@@ -4,12 +4,14 @@
 
 @section('content')
     <div class="container">
-            <div class="mb-4">
-                <a href="{{ route('post.create',['community_id' => $community_id]) }}" class="btn btn-primary btn-block">
-                    投稿を新規作成する
-                </a>
-            </div>
-         @foreach($posts as $post)
+        <h1>{{ $community_name }}の掲示板</h1>
+        <div class="mb-4">
+            <a href="{{ route('post.create',['community_id' => $community_id]) }}" class="btn btn-primary btn-block">
+                投稿を新規作成する
+            </a>
+        </div>
+        @foreach($posts as $post)
+         @if($post->community_id == $community_id)
            <div class="card mb-4">
                <div class="card-header">
                    <p class="text-left">{{ $post->title }}</p>
@@ -45,6 +47,7 @@
                    <p class="text-right">{{ $post->created_at }}</p>
                </div>
            </div>
+          @endif
          @endforeach
          <div class="d-flex justify-content-center mb-5">
             {{ $posts->links() }}
