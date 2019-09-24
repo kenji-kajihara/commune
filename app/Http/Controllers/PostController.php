@@ -10,17 +10,20 @@ use App\Post;
 class PostController extends Controller
 {
     
-    public function index(){
+    public function index(Request $request){
+        $community_id = $request->id;
+        $posts = Post::where('community_id',$community_id)->get();
         
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         
-        return view('commune.post.index', ['posts' => $posts]);
+        return view('commune.post.index', ['posts' => $posts,'community_id' => $community_id]);
     }
     
     
     
-    public function create(){
-        return view('commune.post.create');
+    public function create(Request $request){
+        $community_id = $request->community_id;
+        return view('commune.post.create',['community_id'=>$community_id]);
     }
     
     
@@ -28,6 +31,7 @@ class PostController extends Controller
     public function store(Request $request){
         
         $user_id = Auth::id();
+        $community_id = $request->community_id;
         $params = $request->validate([
                 'title' => 'required|max:50',
                 'body' => 'required|max:2000',
@@ -36,7 +40,8 @@ class PostController extends Controller
         $post=Post::create([
             'user_id'=>$user_id,
             'title' => $request->title,
-            'body' => $request->body
+            'body' => $request->body,
+            'community_id' => $community_id
             ]);
         return redirect('commune/post');
         

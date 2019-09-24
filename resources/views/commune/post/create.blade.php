@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>新規作成</h2>
-                <form method="POST" action="{{ route('post.store') }}" >
+                <form method="POST" action="{{ route('post.store',['community_id' => $community_id]) }}" >
                     @csrf
                     @if (count($errors) > 0)
                       <ul>

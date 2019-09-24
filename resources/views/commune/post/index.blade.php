@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
             <div class="mb-4">
-                <a href="{{ route('post.create') }}" class="btn btn-primary btn-block">
+                <a href="{{ route('post.create',['community_id' => $community_id]) }}" class="btn btn-primary btn-block">
                     投稿を新規作成する
                 </a>
             </div>
@@ -34,7 +34,7 @@
 </a>
                </div>
                <div class="card-footer ">
-                   <p class="text-left"><a href="{{ action('ProfileController@get_profile', ['id'=> $post->user->profile->id]) }}">投稿者：{{ $post->user->profile->name }}</a></p>
+                   <p class="text-left"><a href="{{ action('ProfileController@get_profile', ['id' => $post->user->profile->id]) }}">投稿者：{{ $post->user->profile->name }}</a></p>
                    </span>
 
                     @if ($post->comments->count())

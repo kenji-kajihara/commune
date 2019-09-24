@@ -41,6 +41,7 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
          コミュニティ参加者一覧
         </button>
+        <a class="btn btn-secondary" href="{{ action('PostController@index', ['id' => $community->id]) }}" role="button">一覧を見る &raquo;</a>
         
         <!-- モーダル -->
         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
