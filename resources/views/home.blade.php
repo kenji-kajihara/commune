@@ -11,7 +11,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="first-slide" src="storage/image/community.jpg" alt="First slide">
+        <img class="first-slide" src="s3://moviecommune/community.jpg" alt="First slide">
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>コミュニティ</h1>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img class="second-slide" src="storage/image/profile.jpg" alt="Second slide">
+        <img class="second-slide" src="s3://moviecommune/profile.jpg" alt="Second slide">
         <div class="container">
           <div class="carousel-caption">
             <h1>プロフィール</h1>
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img class="third-slide" src="storage/image/cinema.jpg" alt="Third slide">
+        <img class="third-slide" src="s3://moviecommune/cinema.jpg" alt="Third slide">
         <div class="container">
           <div class="carousel-caption text-right">
             <h1>MAP</h1>
