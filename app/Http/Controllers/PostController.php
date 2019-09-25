@@ -48,7 +48,7 @@ class PostController extends Controller
             'body' => $request->body,
             'community_id' => $community_id
             ]);
-        return redirect('commune/post');
+        return redirect()->route('post.index',['id' => $community_id]);
         
     }
     
@@ -88,12 +88,13 @@ class PostController extends Controller
     
     public function destroy($post_id){
     $post = Post::findOrFail($post_id);
+    $community_id = $post->community_id;
 
     DB::transaction(function () use ($post) {
         $post->comments()->delete();
         $post->delete();
     });
 
-    return redirect()->route('post.index');
+    return redirect()->route('post.index',['id' => $community_id]);
     }
 }
