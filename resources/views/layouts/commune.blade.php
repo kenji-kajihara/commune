@@ -72,7 +72,7 @@
     @yield('content')
 
     <!-- google map api -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5UgK0cxB1_kCF4_KWnr_0KRgVXd9UwVQ&libraries=places"
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyB5UgK0cxB1_kCF4_KWnr_0KRgVXd9UwVQ&libraries=places"
     ></script>
     	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

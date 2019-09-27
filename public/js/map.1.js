@@ -36,23 +36,20 @@ function initialize() {
     };
     var service = new google.maps.places.PlacesService(myMap);
     service.search(request, Result_Places);
-    
 }
  
  
 // 検索結果を受け取る
 function Result_Places(results, status){
-    if(status == google.maps.places.PlacesServiceStatus.OK) {
+    if(status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             createMarker({
                  text : place.name,
-                 address : place.vicinity,
                  position : place.geometry.location
             });
         }
     }
-    
 }
  
 // 入力キーワードと表示範囲を設定
@@ -69,7 +66,7 @@ function SearchGo() {
     var myword = document.getElementById("search");
     var request = {
         query : myword.value,
-        radius : 500,
+        radius : 3000,
         types: ['movie_theater'],
         location : myMap.getCenter()
     };
@@ -84,7 +81,6 @@ function result_search(results, status) {
         createMarker({
              position : results[i].geometry.location,
              text : results[i].name,
-             address : results[i].vicinity,
              map : myMap
          });
         bounds.extend(results[i].geometry.location);
@@ -97,7 +93,7 @@ function createMarker(options) {
     options.map = myMap;
     var marker = new google.maps.Marker(options);
     var infoWnd = new google.maps.InfoWindow();
-    infoWnd.setContent("施設名：" + options.text + "  住所：" + options.address);
+    infoWnd.setContent(options.text);
     google.maps.event.addListener(marker, 'click', function(){
         infoWnd.open(myMap, marker);
     });
