@@ -91,7 +91,7 @@
       <!-- /.col-lg-4 -->
     </div>
     
-        <hr class="featurette-divider">
+    <hr class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -102,7 +102,7 @@
         好きな映画、俳優、アクションやホラーといったジャンル、様々なテーマをもとに集まりましょう！</p>
       </div>
       <div class="col-md-5 text-center">
-        <i class="fas fa-comments fa-10x mb-3 icon" style=""></i>
+        <a class="icon-link" href="{{ action('CommunityController@index') }}"><i class="fas fa-comments fa-10x mb-3 icon"></i></a>
       </div>
     </div>
 
@@ -116,7 +116,7 @@
         <p class="lead">同じ映画やジャンル、俳優を好きな人を探してみましょう！その人がどんなコミュニティに入っているかも確認できます！</p>
       </div>
       <div class="col-md-5 text-center">
-        <i class="fas fa-user-friends fa-10x mb-3 icon"></i>
+        <a class="icon-link" href="{{ action('ProfileController@index') }}"><i class="fas fa-user-friends fa-10x mb-3 icon"></i></a>
       </div>
     </div>
 
@@ -131,7 +131,7 @@
         気になる場所の映画館を探して直接に行ってみましょう！</p>
       </div>
       <div class="col-md-5 text-center">
-       <i class="fas fa-map-marker-alt fa-10x mb-3 icon"></i>
+       <a class="icon-link" href="{{ url('/map') }}"><i class="fas fa-map-marker-alt fa-10x mb-3 icon"></i></a>
       </div>
     </div>
 

@@ -82,6 +82,11 @@ li {
     color: #3E90BA;
 }
 
+.icon-link .fas:hover {
+    transition: 0.8s;
+    color: #6BBED5;
+}
+
 .carousel {
   margin-bottom: 30px;
 }
@@ -104,3 +109,4 @@ li {
   padding-right: 50px;
   border-radius: 30px;
 }
+
